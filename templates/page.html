@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+<article class="article article-complet">
+    <h1>{{ titre_contenu }}</h1>
+    {% for paragraphe in paragraphes %}
+    <p class="contenu">{{ paragraphe }}</p>
+    {% endfor %}
+</article>
+{% endblock %}

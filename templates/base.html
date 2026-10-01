@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titre_page }}</title>
+    <meta name="description" content="{{ description_page }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    {% if adsense_client %}
+    <!-- Script AdSense réel — actif uniquement avec un ID approuvé -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_client }}"
+        crossorigin="anonymous"></script>
+    {% endif %}
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a class="logo" href="{{ url_for('accueil') }}">Mon<span>Site</span></a>
+        <nav>
+            <a href="{{ url_for('accueil') }}">Accueil</a>
+            <a href="{{ url_for('liste_articles') }}">Articles</a>
+            <a href="{{ url_for('a_propos') }}">À propos</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </div>
+</header>
+
+{% block pub_haut %}{% endblock %}
+
+<div class="container grille">
+    <main>
+        {% block contenu %}{% endblock %}
+    </main>
+
+    <aside class="sidebar">
+        <!-- Pub latérale 300×250 -->
+        {% if adsense_client %}
+        <ins class="adsbygoogle pub-laterale"
+             style="display:block"
+             data-ad-client="{{ adsense_client }}"
+             data-ad-slot="{{ slot_lateral }}"
+             data-ad-format="rectangle"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        {% else %}
+        <div class="pub-slot pub-laterale">
+            <div class="etiquette">Publicité</div>
+            Emplacement latéral 300×250
+        </div>
+        {% endif %}
+
+        <div class="bloc">
+            <h3>À propos</h3>
+            <p>{{ nom_site }} : articles tech, IA, code et monétisation en ligne,
+               publiés chaque semaine.</p>
+        </div>
+
+        <div class="bloc">
+            <h3>Navigation</h3>
+            <p><a href="{{ url_for('liste_articles') }}">📚 Tous les articles</a></p>
+            <p><a href="{{ url_for('a_propos') }}">ℹ️ À propos</a></p>
+            <p><a href="{{ url_for('contact') }}">✉️ Contact</a></p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <div class="container">
+        {{ nom_site }} © 2026 |
+        <a href="{{ url_for('a_propos') }}">À propos</a> |
+        <a href="{{ url_for('contact') }}">Contact</a> |
+        <a href="{{ url_for('confidentialite') }}">Politique de confidentialité</a>
+    </div>
+</footer>
+
+</body>
+</html>

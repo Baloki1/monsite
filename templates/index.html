@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block pub_haut %}
+<!-- Pub bannière 970×90 -->
+<div class="pub-banniere container">
+    {% if adsense_client %}
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="{{ adsense_client }}"
+         data-ad-slot="{{ slot_banniere }}"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    {% else %}
+    <div class="pub-slot">
+        <div class="etiquette">Publicité</div>
+        Emplacement bannière 970×90<br>
+        <small>(visible une fois votre ID AdSense ajouté dans app.py)</small>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block contenu %}
+<div class="hero">
+    <h1>Bienvenue sur {{ nom_site }}</h1>
+    <p>Tech, IA, code et monétisation : des articles pratiques, chaque semaine.</p>
+</div>
+
+{% for article in articles %}
+<article class="article">
+    <span class="badge">{{ article.categorie }}</span>
+    <span class="date">{{ article.date }}</span>
+    <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
+    <p class="resume">{{ article.resume }}</p>
+    <a class="lire-suite" href="{{ url_for('article', slug=article.slug) }}">Lire l'article →</a>
+</article>
+
+{% if loop.first %}
+<!-- Pub in-content après le 1er article -->
+{% if adsense_client %}
+<ins class="adsbygoogle pub-contenu"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="{{ adsense_client }}"
+     data-ad-slot="{{ slot_contenu }}"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{% else %}
+<div class="pub-slot pub-contenu">
+    <div class="etiquette">Publicité</div>
+    Emplacement in-content (entre les articles)
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<p class="lien-tous"><a href="{{ url_for('liste_articles') }}">📚 Voir tous les articles →</a></p>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+<h1 class="titre-liste">📚 Tous les articles</h1>
+
+{% for article in articles %}
+<article class="article">
+    <span class="badge">{{ article.categorie }}</span>
+    <span class="date">{{ article.date }}</span>
+    <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
+    <p class="resume">{{ article.resume }}</p>
+    <a class="lire-suite" href="{{ url_for('article', slug=article.slug) }}">Lire l'article →</a>
+</article>
+
+{% if loop.index == 2 %}
+<!-- Pub in-content après le 2e article -->
+{% if adsense_client %}
+<ins class="adsbygoogle pub-contenu"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="{{ adsense_client }}"
+     data-ad-slot="{{ slot_contenu }}"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{% else %}
+<div class="pub-slot pub-contenu">
+    <div class="etiquette">Publicité</div>
+    Emplacement in-content
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endblock %}
