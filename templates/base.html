@@ -76,5 +76,52 @@
     </div>
 </footer>
 
+<!-- ============ BANDEAU DE CONSENTEMENT RGPD ============ -->
+<div id="bandeau-consentement" class="bandeau-consentement" style="display:none;">
+    <div class="bandeau-contenu">
+        <div class="bandeau-texte">
+            <strong>🍪 Respect de votre vie privée</strong>
+            <p>
+                Nous utilisons des cookies, y compris ceux de Google, pour afficher des
+                publicités personnalisées et analyser le trafic. En cliquant sur
+                « Tout accepter », vous consentez à cette utilisation. Consultez notre
+                <a href="{{ url_for('confidentialite') }}">Politique de confidentialité</a>.
+            </p>
+        </div>
+        <div class="bandeau-actions">
+            <button id="btn-refuser" class="btn-bandeau btn-refuser">Refuser</button>
+            <button id="btn-accepter" class="btn-bandeau btn-accepter">Tout accepter</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    var CLE = "consentement_cookies";
+    var bandeau = document.getElementById("bandeau-consentement");
+
+    function chargerAdsense() {
+        // Le consentement est donné : les pubs AdSense se chargent normalement.
+        window.consentementPubs = true;
+    }
+
+    if (!localStorage.getItem(CLE)) {
+        bandeau.style.display = "flex";
+    } else if (localStorage.getItem(CLE) === "accepte") {
+        chargerAdsense();
+    }
+
+    document.getElementById("btn-accepter").addEventListener("click", function () {
+        localStorage.setItem(CLE, "accepte");
+        bandeau.style.display = "none";
+        chargerAdsense();
+    });
+    document.getElementById("btn-refuser").addEventListener("click", function () {
+        localStorage.setItem(CLE, "refuse");
+        bandeau.style.display = "none";
+    });
+})();
+</script>
+
 </body>
 </html>
