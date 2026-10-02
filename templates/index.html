@@ -29,38 +29,22 @@
 
 {% for article in articles %}
 <article class="article">
-    {% for article in articles %}
-<article class="article">
     {% if loop.index == 1 %}
-        <!-- Image pour le 1er article : Puce / Hardware -->
         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Tech" class="tech-img">
     {% elif loop.index == 2 %}
-        <!-- Image pour le 2ème article : Code / Écran -->
         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Code" class="tech-img">
     {% else %}
-        <!-- Image par défaut pour les suivants -->
         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="IA" class="tech-img">
     {% endif %}
 
-    {% for article in articles %}
-<article class="article">
-    {% if loop.index == 1 %}
-
     <span class="badge">{{ article.categorie }}</span>
     <span class="date">{{ article.date }}</span>
     <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
     <p class="resume">{{ article.resume }}</p>
     <a class="lire-suite" href="{{ url_for('article', slug=article.slug) }}">Lire l'article →</a>
-</article>
+</article>⁠
 {% endfor %}
-    <span class="badge">{{ article.categorie }}</span>
-    <span class="date">{{ article.date }}</span>
-    <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
-    <p class="resume">{{ article.resume }}</p>
-    <a class="lire-suite" href="{{ url_for('article', slug=article.slug) }}">Lire l'article →</a>
-</article>
 
-{% if loop.first %}
 <!-- Pub in-content après le 1er article -->
 {% if adsense_client %}
 <ins class="adsbygoogle pub-contenu"
