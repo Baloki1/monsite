@@ -1,49 +1,112 @@
-/* --- Barre de navigation moderne, horizontale et colorée --- */
-header, nav {
+/* --- Navigation Responsive (Téléphone et Ordinateur) --- */
+header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1rem 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     border-bottom: 3px solid #ff758c;
 }
 
-/* Le nom / logo du site reste intact */
-header a.logo, nav .logo, header h1 {
-    color: #ffffff !important;
-    font-size: 1.4rem;
-    font-weight: 800;
-    text-decoration: none;
-    margin: 0;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Les liens alignés proprement côte à côte */
-header ul, nav ul, .nav-links {
+.logo {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* Par défaut (Ordinateur) : les liens s'affichent normalement en ligne */
+.burger-menu summary {
+    display: none; /* Cache le bouton burger sur grand écran */
+}
+
+.burger-menu .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 0;
     margin: 0;
     align-items: center;
 }
 
-header ul li a, nav ul li a, .nav-links a {
+.burger-menu .nav-links li a {
     color: #ffffff !important;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
 }
 
-/* Effet dynamique au survol */
-header ul li a:hover, nav ul li a:hover, .nav-links a:hover {
+.burger-menu .nav-links li a:hover {
     background: #ff758c;
-    color: #ffffff !important;
     box-shadow: 0 4px 10px rgba(255, 117, 140, 0.4);
     transform: translateY(-2px);
+}
+
+/* Version Téléphone (écrans de moins de 768px) */
+@media screen and (max-width: 768px) {
+    .burger-menu summary {
+        display: flex; /* Affiche le bouton burger sur mobile */
+        list-style: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .burger-menu summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .burger-menu summary span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 2px;
+    }
+
+    /* Transforme la liste en menu déroulant vertical sur mobile */
+    .burger-menu .nav-links {
+        position: absolute;
+        right: 1rem;
+        top: 60px;
+        background: #ffffff;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        min-width: 160px;
+        z-index: 100;
+    }
+
+    .burger-menu .nav-links li a {
+        color: #333333 !important;
+        background: none;
+        padding: 0.4rem 0.8rem;
+        display: block;
+    }
+
+    .burger-menu .nav-links li a:hover {
+        background: #f0f2f5;
+        color: #764ba2 !important;
+        transform: none;
+        box-shadow: none;
+    }
 }
