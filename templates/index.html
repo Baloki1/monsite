@@ -29,6 +29,7 @@
 
 {% for article in articles %}
 <article class="article">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Tech" class="tech-img">
     <span class="badge">{{ article.categorie }}</span>
     <span class="date">{{ article.date }}</span>
     <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
