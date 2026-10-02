@@ -42,8 +42,9 @@
     <h2><a href="{{ url_for('article', slug=article.slug) }}">{{ article.titre }}</a></h2>
     <p class="resume">{{ article.resume }}</p>
     <a class="lire-suite" href="{{ url_for('article', slug=article.slug) }}">Lire l'article →</a>
-</article>⁠
+</article>
 {% endfor %}
+
 
 <!-- Pub in-content après le 1er article -->
 {% if adsense_client %}
