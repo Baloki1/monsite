@@ -12,7 +12,7 @@ app = Flask(__name__)
 # ============================================================
 # CONFIGURATION — À PERSONNALISER AVANT MISE EN LIGNE
 # ============================================================
-NOM_SITE = "MonSite"
+NOM_SITE = "balokitec"
 # En local : http://127.0.0.1:5000 — en ligne, Render remplit RENDER_EXTERNAL_URL automatiquement.
 URL_SITE = os.environ.get("RENDER_EXTERNAL_URL", "http://127.0.0.1:5000")
 EMAIL_CONTACT = "contact@monsite.com"  # Votre vraie adresse
