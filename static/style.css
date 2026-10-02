@@ -1,258 +1,75 @@
-:root {
-    --fond: #0B1017;
-    --panneau: #17212D;
-    --panneau-clair: #1B2733;
-    --texte: #F7F4EA;
-    --texte-attenue: #B8C2CE;
-    --accent: #61D8E8;
-    --accent-2: #FFC857;
-    --bordure: #263747;
+/* --- Design Moderne et Professionnel --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    font-family: "Segoe UI", sans-serif;
-    background: var(--fond);
-    color: var(--texte);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2d3748;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1100px;
+    width: 90%;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* ---------- En-tête ---------- */
+/* En-tête stylé */
 header {
-    background: var(--panneau);
-    border-bottom: 1px solid var(--bordure);
-    padding: 18px 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    font-family: Georgia, serif;
-    font-size: 1.6em;
-    font-weight: bold;
-    color: var(--texte);
-    text-decoration: none;
-}
-.logo span { color: var(--accent); }
-nav a {
-    color: var(--texte-attenue);
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 0.95em;
-}
-nav a:hover { color: var(--accent); }
-
-/* ---------- Bannière pub haut ---------- */
-.pub-banniere {
-    margin: 20px auto;
-    max-width: 970px;
-}
-
-/* ---------- Grille principale ---------- */
-.grille {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 25px;
-    margin-top: 10px;
-}
-@media (max-width: 860px) {
-    .grille { grid-template-columns: 1fr; }
-}
-
-/* ---------- Articles ---------- */
-.article {
-    background: var(--panneau);
-    border: 1px solid var(--bordure);
-    border-radius: 14px;
-    padding: 24px;
-    margin-bottom: 24px;
-}
-.badge {
-    display: inline-block;
-    background: #18352F;
-    color: var(--accent);
-    font-size: 0.75em;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
-.article h2 {
-    font-family: Georgia, serif;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-.article .resume { color: var(--texte-attenue); margin-bottom: 14px; }
-.article .contenu { font-size: 0.97em; }
-
-/* ---------- Emplacements pubs ---------- */
-.pub-slot {
-    background: var(--panneau-clair);
-    border: 2px dashed var(--bordure);
-    border-radius: 12px;
-    min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--texte-attenue);
-    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 15px 0;
     text-align: center;
-    padding: 15px;
-    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
-.pub-slot .etiquette {
-    font-size: 0.7em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent-2);
-    margin-bottom: 6px;
-}
-.pub-contenu { margin: 24px 0; min-height: 120px; }
-.pub-laterale { min-height: 250px; margin-bottom: 24px; }
 
-/* ---------- Sidebar ---------- */
-.sidebar .bloc {
-    background: var(--panneau);
-    border: 1px solid var(--bordure);
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 24px;
+header h1 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
-.sidebar h3 {
-    font-family: Georgia, serif;
-    margin-bottom: 10px;
-    font-size: 1.05em;
-    color: var(--accent-2);
-}
-.sidebar p { font-size: 0.9em; color: var(--texte-attenue); }
 
-/* ---------- Pied de page ---------- */
+/* Blocs de contenu et bannières publicitaires */
+.pub-banniere, .card, main {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.pub-banniere:hover, .card:hover {
+    transform: translateY(-3px);
+}
+
+/* Espaces de pub élégants */
+.pub-slot, .pub-banniere {
+    background: linear-gradient(45deg, #f8fafc, #edf2f7);
+    border: 2px dashed #cbd5e0;
+    text-align: center;
+    color: #a0aec0;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Pied de page */
 footer {
-    margin-top: 40px;
-    padding: 25px 0;
-    border-top: 1px solid var(--bordure);
     text-align: center;
-    color: var(--texte-attenue);
-    font-size: 0.85em;
+    padding: 20px;
+    color: #718096;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.5);
 }
-footer a { color: var(--accent); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ---------- Hero ---------- */
-.hero {
-    text-align: center;
-    padding: 30px 20px 40px;
-}
-.hero h1 {
-    font-family: Georgia, serif;
-    font-size: 2em;
-    margin-bottom: 8px;
-}
-.hero p { color: var(--texte-attenue); }
-
-/* ---------- Articles enrichis ---------- */
-.article h1 {
-    font-family: Georgia, serif;
-    font-size: 1.7em;
-    margin: 8px 0 14px;
-    line-height: 1.3;
-}
-.article h2 a {
-    color: var(--texte);
-    text-decoration: none;
-}
-.article h2 a:hover { color: var(--accent); }
-.date {
-    color: var(--texte-attenue);
-    font-size: 0.8em;
-    margin-left: 10px;
-}
-.lire-suite {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-.lire-suite:hover { text-decoration: underline; }
-.article-complet .contenu { margin-bottom: 16px; }
-.titre-liste {
-    font-family: Georgia, serif;
-    margin-bottom: 20px;
-}
-.lien-tous { margin: 20px 0; }
-.lien-tous a { color: var(--accent); text-decoration: none; font-weight: bold; }
-.lien-tous a:hover { text-decoration: underline; }
-
-/* ---------- Sidebar liens ---------- */
-.sidebar .bloc a {
-    color: var(--texte-attenue);
-    text-decoration: none;
-}
-.sidebar .bloc a:hover { color: var(--accent); }
-.sidebar .bloc p { margin-bottom: 6px; }
-
-/* ---------- Bandeau de consentement RGPD ---------- */
-.bandeau-consentement {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(11, 16, 23, 0.97);
-    border-top: 1px solid var(--bordure);
-    display: flex;
-    justify-content: center;
-    padding: 16px 20px;
-    backdrop-filter: blur(6px);
-}
-.bandeau-contenu {
-    max-width: 1000px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.bandeau-texte { flex: 1; min-width: 260px; }
-.bandeau-texte strong { color: var(--accent-2); }
-.bandeau-texte p {
-    color: var(--texte-attenue);
-    font-size: 0.85em;
-    margin-top: 4px;
-}
-.bandeau-texte a { color: var(--accent); }
-.bandeau-actions { display: flex; gap: 10px; }
-.btn-bandeau {
-    border: none;
-    border-radius: 10px;
-    padding: 10px 22px;
-    font-family: inherit;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-}
-.btn-accepter {
-    background: var(--accent);
-    color: var(--fond);
-}
-.btn-accepter:hover { background: #7DDBF0; }
-.btn-refuser {
-    background: transparent;
-    color: var(--texte-attenue);
-    border: 1px solid var(--bordure);
-}
-.btn-refuser:hover { background: var(--panneau-clair); }
