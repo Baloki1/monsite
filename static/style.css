@@ -110,3 +110,11 @@ header {
         box-shadow: none;
     }
 }
+   /* Style propre pour les images d'articles */
+.article img, .tech-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
