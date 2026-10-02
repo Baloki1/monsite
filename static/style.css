@@ -1,34 +1,32 @@
-/* --- Barre de navigation moderne et colorée --- */
+/* --- Barre de navigation moderne, horizontale et colorée --- */
 header, nav {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.8rem;
+    flex-wrap: wrap;
     border-bottom: 3px solid #ff758c;
 }
 
-/* Le nom du site / Logo */
+/* Le nom / logo du site reste intact */
 header a.logo, nav .logo, header h1 {
     color: #ffffff !important;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     text-decoration: none;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin: 0;
 }
 
-/* Les liens du menu */
+/* Les liens alignés proprement côte à côte */
 header ul, nav ul, .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
 }
 
 header ul li a, nav ul li a, .nav-links a {
@@ -36,13 +34,13 @@ header ul li a, nav ul li a, .nav-links a {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
 }
 
-/* Effet dynamique au toucher / survol */
+/* Effet dynamique au survol */
 header ul li a:hover, nav ul li a:hover, .nav-links a:hover {
     background: #ff758c;
     color: #ffffff !important;
