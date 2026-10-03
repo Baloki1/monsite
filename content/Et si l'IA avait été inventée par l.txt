@@ -1,0 +1,12 @@
+Et si l'IA avait été inventée par les plus grands « feignants » de ce monde ? (Et c'est tant mieux)
+Qu'est-ce que serait le monde sans l'IA aujourd'hui ? Franchement, pour beaucoup d'entre nous, elle est devenue une sorte de compagnon d'armes indispensable.
+On connaît tous ce moment de solitude face à une page blanche ou une idée qu'on a du mal à concrétiser, ou à écrire proprement. Heureusement, on demande à un agent IA et il fait le boulot avec une propreté chirurgicale. Pire — ou plutôt, mieux ! — : quand tu écris ton propre code et que ça coince, il suffit souvent d'un clic pour que l'IA règle le problème à ta place.
+Mais attention : cela ne fait pas de nous des paresseux. Ça fait de nous des superviseurs.
+Le pouvoir de la validation finale
+La commande de validation reste entre nos mains. Tant qu'on ne lui donne pas le feu vert de manière explicite, l'IA reste soumise à nos décisions. Elle ne pense pas à notre place, elle exécute ce qu'on orchestre.
+D'ailleurs, si on y réfléchit bien... l'IA ne s'est pas créée toute seule. À la base, elle a bien été fabriquée par des êtres humains. Des groupes de développeurs, grands ou petits, qui ont partagé le boulot.
+Et entre nous, soyons honnêtes : c'est un jeu de mots et de l'ironie, mais l'IA a été conçue par les plus grands « paresseux » de la terre. Enfin, disons plutôt par les plus grands génies du code, ceux qui avaient une telle aversion pour les tâches répétitives et fastidieuses qu'ils ont préféré concevoir un système capable de coder à leur place. Ce qu'ils mettaient des heures à pondre, l'IA le sort en un clin d'œil.
+Ils ont fait le sale boulot de conception, et nous, modestes développeurs ou créateurs de balokitec, on en profite un max.
+Du simple exécutant au chef d'orchestre
+Ceux qui voient l'IA comme une menace pour l'effort humain ratent complètement le coche. Ce n'est pas de la paresse, c'est de l'optimisation pure. L'informatique a toujours cherché à en faire plus avec moins d'efforts manuels : du code binaire aux langages de haut niveau, puis des frameworks aux agents autonomes d'aujourd'hui.
+Aujourd'hui, notre rôle change. On passe du statut de celui qui tape chaque ligne de code dans la sueur et les larmes à celui de chef d'orchestre. Et franchement, vu le confort, on ne va pas s'en plaindre !
